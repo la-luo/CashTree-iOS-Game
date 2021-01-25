@@ -16,6 +16,9 @@
 		CD134F9F25BD18A800DAF5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD134F9E25BD18A800DAF5CC /* Assets.xcassets */; };
 		CD134FAA25BD18A800DAF5CC /* CashTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD134FA925BD18A800DAF5CC /* CashTreeTests.swift */; };
 		CD134FB525BD18A800DAF5CC /* CashTreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD134FB425BD18A800DAF5CC /* CashTreeUITests.swift */; };
+		CD134FC925BDFAAC00DAF5CC /* Hero.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD134FC825BDFAAC00DAF5CC /* Hero.sks */; };
+		CD134FD125BE5DD300DAF5CC /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD134FD025BE5DD200DAF5CC /* Dollar.swift */; };
+		CD134FD225BE5DD300DAF5CC /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD134FD025BE5DD200DAF5CC /* Dollar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,8 @@
 		CD134FB025BD18A800DAF5CC /* CashTreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashTreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD134FB425BD18A800DAF5CC /* CashTreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashTreeUITests.swift; sourceTree = "<group>"; };
 		CD134FB625BD18A800DAF5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD134FC825BDFAAC00DAF5CC /* Hero.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hero.sks; sourceTree = "<group>"; };
+		CD134FD025BE5DD200DAF5CC /* Dollar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dollar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +108,14 @@
 			children = (
 				CD134F9125BD18A400DAF5CC /* AppDelegate.swift */,
 				CD134F9325BD18A500DAF5CC /* GameScene.sks */,
+				CD134FC825BDFAAC00DAF5CC /* Hero.sks */,
 				CD134F9525BD18A500DAF5CC /* Actions.sks */,
 				CD134F9725BD18A500DAF5CC /* GameScene.swift */,
 				CD134F9925BD18A500DAF5CC /* GameViewController.swift */,
 				CD134F9B25BD18A500DAF5CC /* Main.storyboard */,
 				CD134F9E25BD18A800DAF5CC /* Assets.xcassets */,
 				CD134FA025BD18A800DAF5CC /* Info.plist */,
+				CD134FD025BE5DD200DAF5CC /* Dollar.swift */,
 			);
 			path = CashTree;
 			sourceTree = "<group>";
@@ -237,6 +244,7 @@
 				CD134F9D25BD18A500DAF5CC /* Main.storyboard in Resources */,
 				CD134F9425BD18A500DAF5CC /* GameScene.sks in Resources */,
 				CD134F9F25BD18A800DAF5CC /* Assets.xcassets in Resources */,
+				CD134FC925BDFAAC00DAF5CC /* Hero.sks in Resources */,
 				CD134F9625BD18A500DAF5CC /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD134F9825BD18A500DAF5CC /* GameScene.swift in Sources */,
+				CD134FD125BE5DD300DAF5CC /* Dollar.swift in Sources */,
 				CD134F9A25BD18A500DAF5CC /* GameViewController.swift in Sources */,
 				CD134F9225BD18A400DAF5CC /* AppDelegate.swift in Sources */,
 			);
@@ -273,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD134FAA25BD18A800DAF5CC /* CashTreeTests.swift in Sources */,
+				CD134FD225BE5DD300DAF5CC /* Dollar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
