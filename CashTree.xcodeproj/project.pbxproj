@@ -19,6 +19,7 @@
 		CD134FC925BDFAAC00DAF5CC /* Hero.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD134FC825BDFAAC00DAF5CC /* Hero.sks */; };
 		CD134FD125BE5DD300DAF5CC /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD134FD025BE5DD200DAF5CC /* Dollar.swift */; };
 		CD134FD225BE5DD300DAF5CC /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD134FD025BE5DD200DAF5CC /* Dollar.swift */; };
+		CD736E7025BFBBFB00874565 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD736E6F25BFBBFB00874565 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		CD134FB625BD18A800DAF5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD134FC825BDFAAC00DAF5CC /* Hero.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hero.sks; sourceTree = "<group>"; };
 		CD134FD025BE5DD200DAF5CC /* Dollar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dollar.swift; sourceTree = "<group>"; };
+		CD736E6F25BFBBFB00874565 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				CD134F9E25BD18A800DAF5CC /* Assets.xcassets */,
 				CD134FA025BD18A800DAF5CC /* Info.plist */,
 				CD134FD025BE5DD200DAF5CC /* Dollar.swift */,
+				CD736E6F25BFBBFB00874565 /* Settings.swift */,
 			);
 			path = CashTree;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				CD134FD125BE5DD300DAF5CC /* Dollar.swift in Sources */,
 				CD134F9A25BD18A500DAF5CC /* GameViewController.swift in Sources */,
 				CD134F9225BD18A400DAF5CC /* AppDelegate.swift in Sources */,
+				CD736E7025BFBBFB00874565 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var hero : SKSpriteNode!
     
     override func didMove(to view: SKView) {
-        
+        setupPhysics()
+      
         // Get tree node from scene and store it for use later
         self.tree = self.childNode(withName: "//tree") as? SKSpriteNode
         if let tree = self.tree {
@@ -26,8 +27,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hero = (self.childNode(withName: "//player") as! SKSpriteNode)
         // allows the hero to animate when it's in the GameScene
         hero.isPaused  = false
-        
-        spawnDollar()
         
         // Create shape node to use during mouse interaction
 //        let w = (self.size.width + self.size.height) * 0.03
@@ -44,6 +43,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        print("TODO: Add contact code")
+    }
     
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
@@ -81,6 +83,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if let tree = self.tree {
                     tree.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
                 }
+                spawnDollar()
             }
         } else {
             if touchX < heroX {
