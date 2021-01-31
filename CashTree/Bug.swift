@@ -7,34 +7,37 @@
 
 import SpriteKit
 
-class Bug {
-    
-    var bugNode : SKSpriteNode!
+class Bug : SKSpriteNode {
     
     init(frame: CGRect) {
-        bugNode = SKSpriteNode(texture: SKTexture(imageNamed: "bluebug_1"))
-        bugNode.name = "BlueBug"
-        bugNode.position = CGPoint(x: CGFloat(arc4random_uniform(UInt32(frame.maxX * 2))) - frame.maxX, y: frame.maxY - 100)
-        bugNode.zPosition = 1
-        bugNode.physicsBody = SKPhysicsBody(circleOfRadius: bugNode.size.width/2)
-        bugNode.physicsBody?.categoryBitMask = PhysicsCategories.bluebugCategory
-        bugNode.physicsBody?.contactTestBitMask = PhysicsCategories.playerCategory
-        bugNode.physicsBody?.collisionBitMask = PhysicsCategories.none
-        bugNode.physicsBody?.linearDamping = 0.1
+        let texture = SKTexture(imageNamed: "bluebug1")
+        super.init(texture: texture, color: UIColor.clear, size: texture.size())
+        self.name = "BlueBug"
+        self.position = CGPoint(x: CGFloat(arc4random_uniform(UInt32(frame.maxX * 2))) - frame.maxX, y: frame.maxY - 100)
+        self.zPosition = 1
+        self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.width/2)
+        self.physicsBody?.categoryBitMask = PhysicsCategories.bluebugCategory
+        self.physicsBody?.contactTestBitMask = PhysicsCategories.playerCategory
+        self.physicsBody?.collisionBitMask = PhysicsCategories.groundCategory
+        self.physicsBody?.linearDamping = 0.1
+        
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func beginAnimation() {
-        let bugAtlas = SKTextureAtlas(named: "bluebug")
-        var bugFrames = [SKTexture]()
-        for i in [1,2,3,4,5,4,3,2] {
-            let bugTextName = "bluebug_\(i).png"
-            bugFrames.append(bugAtlas.textureNamed(bugTextName))
-        }
-        print(bugFrames)
-        let animate = SKAction.animate(withNormalTextures: bugFrames, timePerFrame: 1)
-        let forever = SKAction.repeatForever(animate)
-        print(forever)
-        bugNode.run(forever)
+
+       let array = ["bluebug1", "bluebug2", "bluebug3", "bluebug4", "bluebug5"]
+            var textures:[SKTexture] = []
+            for i in 0 ..< array.count{
+                let texture: SKTexture = SKTexture(imageNamed: array[i])
+                textures.insert(texture, at:i)
+            }
+        let animate = SKAction.animate(with: textures, timePerFrame: 0.1)
+    
+        self.run(SKAction.repeatForever(animate))
         
     }
 }

@@ -12,4 +12,5 @@ enum PhysicsCategories {
     static let dollarCategory: UInt32 = 0x1  // 00000001  0x00000001
     static let bluebugCategory: UInt32 = 0x1 << 1  // 00000010  0x00000002
     static let playerCategory: UInt32 = 0x1 << 2  // 00000100  0x00000004
+    static let groundCategory: UInt32 = 0x1 << 3  // 00001000  0x00000008
 }

@@ -18,7 +18,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         setupPhysics()
 
-      
         // Get tree node from scene and store it for use later
         self.tree = self.childNode(withName: "//tree") as? SKSpriteNode
         if let tree = self.tree {
@@ -97,6 +96,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if let tree = self.tree {
                         tree.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
                     }
+                    hero.run(SKAction.init(named: "hitTree")!, withKey: "hit")
                     spawnDollar()
                     let ranNum = Int.random(in: 1..<100)
                     spawnBug(ranNum: ranNum)
@@ -157,14 +157,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnDollar() {
         let dollar1 = Dollar(frame: frame)
         let dollar2 = Dollar(frame: frame)
-        addChild(dollar1.dollarNode)
-        addChild(dollar2.dollarNode)
+        addChild(dollar1)
+        addChild(dollar2)
     }
     
     func spawnBug(ranNum: Int) {
         if ranNum % 9 == 0 {
             let bug1 = Bug(frame: frame)
-            addChild(bug1.bugNode)
+            addChild(bug1)
             bug1.beginAnimation()
         }
     }
