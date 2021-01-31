@@ -20,6 +20,7 @@
 		CD134FD125BE5DD300DAF5CC /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD134FD025BE5DD200DAF5CC /* Dollar.swift */; };
 		CD134FD225BE5DD300DAF5CC /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD134FD025BE5DD200DAF5CC /* Dollar.swift */; };
 		CD736E7025BFBBFB00874565 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD736E6F25BFBBFB00874565 /* Settings.swift */; };
+		CD736E7525C5057700874565 /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD736E7425C5057700874565 /* Bug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		CD134FC825BDFAAC00DAF5CC /* Hero.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hero.sks; sourceTree = "<group>"; };
 		CD134FD025BE5DD200DAF5CC /* Dollar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dollar.swift; sourceTree = "<group>"; };
 		CD736E6F25BFBBFB00874565 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CD736E7425C5057700874565 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				CD134F9E25BD18A800DAF5CC /* Assets.xcassets */,
 				CD134FA025BD18A800DAF5CC /* Info.plist */,
 				CD134FD025BE5DD200DAF5CC /* Dollar.swift */,
+				CD736E7425C5057700874565 /* Bug.swift */,
 				CD736E6F25BFBBFB00874565 /* Settings.swift */,
 			);
 			path = CashTree;
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD736E7525C5057700874565 /* Bug.swift in Sources */,
 				CD134F9825BD18A500DAF5CC /* GameScene.swift in Sources */,
 				CD134FD125BE5DD300DAF5CC /* Dollar.swift in Sources */,
 				CD134F9A25BD18A500DAF5CC /* GameViewController.swift in Sources */,

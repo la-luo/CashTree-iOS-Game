@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "penguin_walk02.png",
+      "filename" : "bug_2_01.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "penguin_walk02-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

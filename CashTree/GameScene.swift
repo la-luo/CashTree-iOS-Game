@@ -15,7 +15,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var hero : SKSpriteNode!
     
     override func didMove(to view: SKView) {
+
         setupPhysics()
+
       
         // Get tree node from scene and store it for use later
         self.tree = self.childNode(withName: "//tree") as? SKSpriteNode
@@ -27,7 +29,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hero = (self.childNode(withName: "//player") as! SKSpriteNode)
         // allows the hero to animate when it's in the GameScene
         hero.isPaused  = false
-        
         // Create shape node to use during mouse interaction
 //        let w = (self.size.width + self.size.height) * 0.03
 //        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
@@ -45,17 +46,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         print("TODO: Add contact code")
-    }
-    
-    func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        if contactMask == PhysicsCategories.dollarCategory | PhysicsCategories.playerCategory {
+            print("find dollar contact")
+            if let dollar = contact.bodyA.node?.name == "Dollar" ? contact.bodyA.node as? SKSpriteNode : contact.bodyB.node as? SKSpriteNode {
+                
+                dollar.removeFromParent()
+            }
         }
     }
     
+    func touchDown(atPoint pos : CGPoint) {
+//        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
+//            n.position = pos
+//            n.strokeColor = SKColor.green
+//            self.addChild(n)
+//        }
+    }
+    
     func touchMoved(toPoint pos : CGPoint) {
+
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos
             n.strokeColor = SKColor.blue
@@ -73,33 +84,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
-        let touchX = touches.first?.location(in: self).x ?? 0
-        let touchY = touches.first?.location(in: self).y ?? 0
+//        let touchX = touches.first?.location(in: self).x ?? 0
+//        let touchY = touches.first?.location(in: self).y ?? 0
         let heroX = hero.position.x
-//        let heroY = hero.position.y
-        
-        if (touchX < -200 && touchX > -310) && (touchY < -200 && touchY > -280) {
-            if heroX < -200 && heroX > -320 {
-                if let tree = self.tree {
-                    tree.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+
+        for t in touches {
+            let touchX = t.location(in: self).x
+            let touchY = t.location(in: self).y
+            if (touchX < -200 && touchX > -310) && (touchY < -200 && touchY > -280) {
+                if heroX < -200 && heroX > -320 {
+                    hero.physicsBody?.velocity.dx = 0
+                    if let tree = self.tree {
+                        tree.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+                    }
+                    spawnDollar()
+                    let ranNum = Int.random(in: 1..<100)
+                    spawnBug(ranNum: ranNum)
                 }
-                spawnDollar()
-            }
-        } else {
+            } else {
+//            self.touchDown(atPoint: t.location(in: self))
             if touchX < heroX {
-                hero.physicsBody?.applyImpulse(CGVector(dx:-20, dy:0))
+                hero.physicsBody?.velocity.dx = -300
+//                hero.physicsBody?.applyImpulse(CGVector(dx:-20, dy:0))
                 if hero.xScale == 1.0 {
                     hero.xScale = -1.0
                 }
             } else {
-                hero.physicsBody?.applyImpulse(CGVector(dx:20, dy:0))
+                hero.physicsBody?.velocity.dx = 300
+//                hero.physicsBody?.applyImpulse(CGVector(dx:20, dy:0))
                 if hero.xScale == -1.0 {
                     hero.xScale = 1.0
                 }
             }
         }
-        
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -122,10 +140,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        if velocityX > 10 {
 //            hero.physicsBody?.velocity.dx = 10;
 //        }
+        
+        if hero.position.x > 550 {
+            hero.position.x = 550
+        }
+        if hero.position.x < -550 {
+            hero.position.x = -550
+        }
     }
     
     func setupPhysics() {
-        physicsWorld.gravity = CGVector(dx: 0.0, dy: -2)
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: -3.0)
         physicsWorld.contactDelegate = self
     }
     
@@ -134,5 +159,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let dollar2 = Dollar(frame: frame)
         addChild(dollar1.dollarNode)
         addChild(dollar2.dollarNode)
+    }
+    
+    func spawnBug(ranNum: Int) {
+        if ranNum % 9 == 0 {
+            let bug1 = Bug(frame: frame)
+            addChild(bug1.bugNode)
+            bug1.beginAnimation()
+        }
     }
 }

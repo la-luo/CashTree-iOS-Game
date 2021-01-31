@@ -9,6 +9,7 @@ import SpriteKit
 
 enum PhysicsCategories {
     static let none: UInt32 = 0
-    static let dollarCategory: UInt32 = 0x1
-    static let playerCategory: UInt32 = 0x1 << 1
+    static let dollarCategory: UInt32 = 0x1  // 00000001  0x00000001
+    static let bluebugCategory: UInt32 = 0x1 << 1  // 00000010  0x00000002
+    static let playerCategory: UInt32 = 0x1 << 2  // 00000100  0x00000004
 }

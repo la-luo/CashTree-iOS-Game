@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "penguin_walk02.png",
+      "filename" : "object_mushroom.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "penguin_walk02-1.png",
+      "filename" : "object_mushroom@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
