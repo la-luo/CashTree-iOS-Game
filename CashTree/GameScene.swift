@@ -13,10 +13,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var tree : SKSpriteNode?
     private var spinnyNode : SKShapeNode?
     var hero : SKSpriteNode!
+    var scoreLabel: ScoreLabel!
     
     override func didMove(to view: SKView) {
 
         setupPhysics()
+        scoreLabel = ScoreLabel(frame: frame)
+        addChild(scoreLabel)
 
         // Get tree node from scene and store it for use later
         self.tree = self.childNode(withName: "//tree") as? SKSpriteNode
