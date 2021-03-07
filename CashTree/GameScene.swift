@@ -53,7 +53,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if contactMask == PhysicsCategories.dollarCategory | PhysicsCategories.playerCategory {
             print("find dollar contact")
             if let dollar = contact.bodyA.node?.name == "Dollar" ? contact.bodyA.node as? SKSpriteNode : contact.bodyB.node as? SKSpriteNode {
-                
+                scoreLabel.score! += 1
+//                print(scoreLabel.score!)
+                scoreLabel.updateScore()
                 dollar.removeFromParent()
             }
         }
