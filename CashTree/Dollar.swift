@@ -17,7 +17,7 @@ class Dollar : SKSpriteNode {
         self.position = CGPoint(x: CGFloat(arc4random_uniform(UInt32(frame.maxX * 2))) - frame.maxX, y: frame.maxY - 100)
         self.zPosition = 1
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.width/3)
-        self.physicsBody?.linearDamping = 0.995
+        self.physicsBody?.linearDamping = 3
         self.physicsBody?.categoryBitMask = PhysicsCategories.dollarCategory
         self.physicsBody?.contactTestBitMask = PhysicsCategories.playerCategory
         self.physicsBody?.collisionBitMask = PhysicsCategories.none

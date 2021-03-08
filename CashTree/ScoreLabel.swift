@@ -13,7 +13,7 @@ class ScoreLabel: SKLabelNode {
     init(frame: CGRect) {
         super.init()
         self.score = 0
-        self.text = "$ \(self.score ?? 0)"
+        self.text = "$ 0"
         self.position = CGPoint(x: CGFloat(500), y: CGFloat(300))
         self.zPosition = 2
         self.fontColor = UIColor.white
